@@ -45,5 +45,5 @@ class ShortMe(models.Model):
         super(ShortMe, self).save(*args, **kwargs)
 
     def get_short_url(self):
-        url_path = reverse("links:get-link", kwargs={'shortcode': self.shortcode}, host='www', scheme='https')
+        url_path = reverse("links:get-link", kwargs={'shortcode': self.shortcode}, host='www', scheme='http')
         return url_path

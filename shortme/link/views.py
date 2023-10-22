@@ -1,7 +1,8 @@
-from django.http import HttpResponseRedirect
-from django.shortcuts import get_object_or_404, render
+from django.http import Http404, HttpResponseRedirect
+from django.shortcuts import render
 from django.views import View
 
+from shortme.analytics.models import ClickEvent
 from shortme.link.forms import SubmitURL
 from shortme.link.models import ShortMe
 
@@ -29,5 +30,9 @@ class HomeView(View):
 
 class ShortMeView(View):
     def get(self, request, shortcode=None, *args, **kwargs):
-        obj = get_object_or_404(ShortMe, shortcode=shortcode)
+        qs = ShortMe.objects.filter(shortcode__iexact=shortcode)
+        if qs.count() != 1 and not qs.exists():
+            return Http404
+        obj = qs.first()
+        print(ClickEvent.objects.create_event(obj))
         return HttpResponseRedirect(obj.url)

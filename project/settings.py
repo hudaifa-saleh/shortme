@@ -19,6 +19,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     'django_hosts',
     'shortme.link',
+    'shortme.analytics',
 ]
 
 MIDDLEWARE = [
@@ -36,7 +37,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = "project.urls"
 ROOT_HOSTCONF = 'project.hosts'
 DEFAULT_HOST = 'www'
-DEFAULT_REDIRECT_URL = "https://www.shortme.com:8000"
+DEFAULT_REDIRECT_URL = "http://www.shortme.com:8000"
 PARENT_HOST = "shortme.com:8000"
 
 TEMPLATES = [

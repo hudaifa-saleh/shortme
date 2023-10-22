@@ -1,6 +1,13 @@
-<div style="align-text: center;width: 800px; margin:0 auto;">
-    <h1>Created</h1>
-    <p>{{ object.url }}</p>
-    <p>{{ object.get_short_url }}</p>
-    <a href="/">+New</a>
-</div>
+{% extends 'base.html' %}
+{% block body %}
+    <div class="form">
+        <div>
+            <h1>Created</h1>
+            <p>{{ object.url }}</p>
+            <p><a href="{{ object.get_short_url }}">{{ object.get_short_url }}</a></p>
+            <a href="/">
+                <button type="submit" class="shorten-button">+New</button>
+            </a>
+
+        </div>
+{% endblock %}
