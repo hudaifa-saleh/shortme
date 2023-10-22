@@ -8,7 +8,7 @@ from shortme.link.models import ShortMe
 class HomeView(View):
     def get(self, request, *args, **kwargs):
         context = {}
-        return render(request, "short/home.html", context=context)
+        return render(request, 'shortme/home.html', context=context)
 
 
 class ShortMeView(View):
