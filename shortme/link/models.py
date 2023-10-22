@@ -1,5 +1,7 @@
 from django.conf import settings
 from django.db import models
+
+from shortme.link.validators import validate_dot_com, validate_url
 from .utils import create_shortcode
 
 SHORTCODE_MAX = getattr(settings, 'SHORTCODE_MAX', 15)
@@ -26,7 +28,7 @@ class ShortMeManager(models.Manager):
 
 
 class ShortMe(models.Model):
-    url = models.CharField(max_length=250)
+    url = models.CharField(max_length=250, validators=[validate_url, validate_dot_com])
     shortcode = models.CharField(max_length=SHORTCODE_MAX, unique=True, blank=True)
     created = models.DateTimeField(auto_now=True)
     timestamp = models.DateTimeField(auto_now_add=True)
