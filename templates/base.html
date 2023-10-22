@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body {
+            font-family: Menlo, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #f0f2f3, #f7f9fa);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form {
+            background: #ffffff;
+            padding: 80px;
+            border-radius: 30px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+            max-width: 500px; /* Adjust the max-width to make the box bigger */
+            text-align: center;
+        }
+
+        .url-input {
+            font-family: Menlo, sans-serif;
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px 0;
+            border: 2px solid #429ed0;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .shorten-button {
+            font-family: Menlo, sans-serif;
+            background: #070707;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        .shorten-button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+{% block body %}{% endblock body %}
+</body>
+</html>

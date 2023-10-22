@@ -10,6 +10,10 @@ class HomeView(View):
         context = {}
         return render(request, 'shortme/home.html', context=context)
 
+    def post(self, request, *args, **kwargs):
+        context = {}
+        return render(request, 'shortme/home.html', context=context)
+
 
 class ShortMeView(View):
     def get(self, request, shortcode=None, *args, **kwargs):
