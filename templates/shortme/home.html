@@ -1,18 +1,11 @@
-{% extends 'base.html' %}
-{% block body %}
-    <div class="container">
-        <div class="form">
-            <h1>URL Shortener</h1>
-            <form method="POST" action=".">
-                {% csrf_token %}
-                <label>
-                    <input type="text" class="url-input" name="url" placeholder="Enter your URL">
-                </label>
-                <br>
-                <button type="submit" class="shorten-button">Shorten URL</button>
-            </form>
-        </div>
-    </div>
-{% endblock body %}
+<div style="align-text: center;width: 800px; margin:0 auto;">
+    <h1>URL Shortener</h1>
+    <form method="POST" action=".">
+        {% csrf_token %}
+        {{ form }}
+        <br>
+        <button type="submit" class="shorten-button">Shorten URL</button>
+    </form>
+</div>
 
 

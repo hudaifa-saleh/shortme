@@ -15,7 +15,16 @@ class HomeView(View):
     def post(self, request, *args, **kwargs):
         form = SubmitURL(request.POST)
         context = {'form': form}
-        return render(request, 'shortme/home.html', context=context)
+        template = 'shortme/home.html'
+        if form.is_valid():
+            new_url = form.cleaned_data.get('url')
+            obj, created = ShortMe.objects.get_or_create(url=new_url)
+            context = {'created': created, 'object': obj}
+            if created:
+                template = 'shortme/success.html'
+            else:
+                template = 'shortme/already_exists.html'
+        return render(request, template, context)
 
 
 class ShortMeView(View):
