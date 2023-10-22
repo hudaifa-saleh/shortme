@@ -5,10 +5,10 @@ from django.core.validators import URLValidator
 def validate_url(value):
     url_validator = URLValidator()
     reg_val = value
-    if "https" in reg_val:
+    if "http" in reg_val:
         new_value = reg_val
     else:
-        new_value = 'https://' + value
+        new_value = 'http://' + value
     try:
         url_validator(new_value)
     except:
