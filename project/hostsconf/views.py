@@ -1,7 +1,7 @@
 from django.conf import settings
 from django.http import HttpResponseRedirect
 
-DEFAULT_REDIRECT_URL = getattr(settings, "DEFAULT_REDIRECT_URL", "https://www.kirr.co")
+DEFAULT_REDIRECT_URL = getattr(settings, "DEFAULT_REDIRECT_URL", "https://www.shortme.com")
 
 
 
