@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.db import models
+from django_hosts.resolvers import reverse
 
 from shortme.link.validators import validate_dot_com, validate_url
 from .utils import create_shortcode
@@ -42,3 +43,7 @@ class ShortMe(models.Model):
         if self.shortcode is None or self.shortcode == "":
             self.shortcode = create_shortcode(self)
         super(ShortMe, self).save(*args, **kwargs)
+
+    def get_short_url(self):
+        url_path = reverse("links:get-link", kwargs={'shortcode': self.shortcode}, host='www', scheme='https')
+        return url_path
