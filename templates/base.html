@@ -1,57 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title></title>
-{#    <style>#}
-{#        body {#}
-{#            font-family: Menlo, sans-serif;#}
-{#            margin: 0;#}
-{#            padding: 0;#}
-{#            background: linear-gradient(to bottom, #f0f2f3, #f7f9fa);#}
-{#            display: flex;#}
-{#            justify-content: center;#}
-{#            align-items: center;#}
-{#            height: 100vh;#}
-{#        }#}
-{##}
-{#        .form {#}
-{#            background: #ffffff;#}
-{#            padding: 140px 300px;#}
-{#            border-radius: 25px;#}
-{#            box-shadow: 5px 5px 50px rgba(0, 0, 0, 0.2);#}
-{#            max-width: 500px; /* Adjust the max-width to make the box bigger */#}
-{#            text-align: center;#}
-{#        }#}
-{##}
-{#        .url-input {#}
-{#            font-family: Menlo, sans-serif;#}
-{#            width: 150%;#}
-{#            padding: 15px;#}
-{#            font-size: 16px;#}
-{#            margin: 0;#}
-{#            border: 2px solid #429ed0;#}
-{#            border-radius: 10px;#}
-{#            outline: none;#}
-{#        }#}
-{##}
-{#        .shorten-button {#}
-{#            font-family: Menlo, sans-serif;#}
-{#            background: #070707;#}
-{#            color: white;#}
-{#            padding: 10px 30px;#}
-{#            border: none;#}
-{#            cursor: pointer;#}
-{#            font-size: 16px;#}
-{#            border-radius: 11px;#}
-{#        }#}
-{##}
-{#        .shorten-button:hover {#}
-{#            background-color: #121313;#}
-{#        }#}
-{#    </style>#}
+    <style>
+        body {
+            font-family: Menlo, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #f0f2f3, #f7f9fa);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form {
+            background: #ffffff;
+            padding: 110px 300px;
+            border-radius: 25px;
+            box-shadow: 5px 5px 50px rgba(0, 0, 0, 0.2);
+            max-width: 500px; /* Adjust the max-width to make the box bigger */
+            text-align: center;
+        }
+
+        .url-input {
+            font-family: Menlo, sans-serif;
+            width: 100%;
+            padding: 20px 40px;
+            font-size: 16px;
+            margin: 0;
+            border: 2px solid #429ed0;
+            border-radius: 18px;
+            outline: none;
+        }
+
+        .shorten-button {
+            font-family: Menlo, sans-serif;
+            background: #070707;
+            color: white;
+            padding: 20px 40px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 13px;
+        }
+
+        .shorten-button:hover {
+            background-color: #121313;
+        }
+    </style>
 </head>
 <body>
 {% block body %}{% endblock body %}
+{% block js %}{% endblock js %}
 </body>
 </html>
